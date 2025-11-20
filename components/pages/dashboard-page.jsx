@@ -2,7 +2,6 @@
 import React from "react";
 import MainLayout from "../layout/main-layout";
 import Sidebar from "../layout/sidebar";
-import Navbar from "../layout/navbar";
 import Card from "../global/card";
 
 const stats = [
@@ -13,7 +12,7 @@ const stats = [
 ];
 
 const DashboardPage = () => (
-  <MainLayout sidebar={<Sidebar role="admin" />} navbar={<Navbar />}>
+  <MainLayout sidebar={<Sidebar role="admin" />}>
     <h1 className="text-3xl font-bold mb-6 text-black">Admin Dashboard</h1>
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
       {stats.map((s) => (

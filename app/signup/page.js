@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 import toast from "react-hot-toast";
-import Navbar from "../../components/layout/navbar";
 import InputField from "../../components/global/input-field";
 import Button from "../../components/global/button";
 
@@ -90,9 +89,8 @@ const SignupPage = () => {
   };
 
   return (
-    <>
-      <Navbar />
-      <div className="max-w-md mx-auto mt-16 bg-white">
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4">
+      <div className="max-w-md w-full">
         <form
           onSubmit={handleSubmit}
           className="bg-white p-8 rounded shadow-md"
@@ -168,7 +166,7 @@ const SignupPage = () => {
           </div>
         </form>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
-import Navbar from "../layout/navbar";
 import InputField from "../global/input-field";
 import Button from "../global/button";
 
@@ -73,56 +72,53 @@ const LoginPage = () => {
   };
 
   return (
-    <>
-      <Navbar />
-      <div className="min-h-[calc(100vh-4rem)] w-full bg-gray-50 flex items-start justify-center py-12 px-4">
-        <form
-          onSubmit={handleSubmit}
-          className="bg-white p-8 rounded shadow-md w-full max-w-md"
-        >
-          <h2 className="text-2xl text-black font-bold mb-6 text-center">
-            Sign In
-          </h2>
+    <div className="min-h-screen w-full bg-gray-50 flex items-start justify-center py-12 px-4">
+      <form
+        onSubmit={handleSubmit}
+        className="bg-white p-8 rounded shadow-md w-full max-w-md"
+      >
+        <h2 className="text-2xl text-black font-bold mb-6 text-center">
+          Sign In
+        </h2>
 
-          <InputField
-            label="Email"
-            name="email"
-            type="email"
-            value={form.email}
-            onChange={handleChange}
-            placeholder="Enter your email"
-            disabled={isLoading}
-            required
-          />
+        <InputField
+          label="Email"
+          name="email"
+          type="email"
+          value={form.email}
+          onChange={handleChange}
+          placeholder="Enter your email"
+          disabled={isLoading}
+          required
+        />
 
-          <InputField
-            label="Password"
-            name="password"
-            type="password"
-            value={form.password}
-            onChange={handleChange}
-            placeholder="Enter your password"
-            disabled={isLoading}
-            required
-          />
+        <InputField
+          label="Password"
+          name="password"
+          type="password"
+          value={form.password}
+          onChange={handleChange}
+          placeholder="Enter your password"
+          disabled={isLoading}
+          required
+        />
 
-          <Button type="submit" disabled={isLoading}>
-            {isLoading ? "Signing in..." : "Sign In"}
-          </Button>
+        <Button type="submit" disabled={isLoading}>
+          {isLoading ? "Signing in..." : "Sign In"}
+        </Button>
 
-          <div className="mt-4 text-center text-sm text-gray-600">
-            Don&apos;t have an account?{" "}
-            <button
-              type="button"
-              onClick={() => router.push("/signup")}
-              className="text-blue-600 hover:text-blue-800 underline"
-            >
-              Sign Up
-            </button>
-          </div>
-        </form>
-      </div>
-    </>
+        <div className="mt-4 text-center text-sm text-gray-600">
+          Don&apos;t have an account?{" "}
+          <button
+            type="button"
+            onClick={() => router.push("/signup")}
+            className="text-blue-600 hover:text-blue-800 underline"
+          >
+            Sign Up
+          </button>
+        </div>
+      </form>
+    </div>
   );
 };
 
